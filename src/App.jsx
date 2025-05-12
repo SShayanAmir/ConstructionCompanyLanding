@@ -23,8 +23,6 @@ import AboutPage from "./Pages/AboutPage.jsx";
 import HomePage from "./Pages/HomePage.jsx";
 
 function App() {
-  const [exampleState, setExampleState] = useState("Hello World");
-
   const location = useLocation();
   const hideFooterOn = ["/Contact"];
   const shouldShowFooter = !hideFooterOn.includes(location.pathname);
