@@ -23,6 +23,8 @@ import AboutPage from "./Pages/AboutPage.jsx";
 import HomePage from "./Pages/HomePage.jsx";
 
 function App() {
+  const [exampleState, setExampleState] = useState("Hello World");
+
   const location = useLocation();
   const hideFooterOn = ["/Contact"];
   const shouldShowFooter = !hideFooterOn.includes(location.pathname);
@@ -31,33 +33,15 @@ function App() {
     <>
       <Navbar />
       <Routes>
-        <Route path="/ConstructionCompanyLanding/" element={<MainPage />} />
-        <Route
-          path="/ConstructionCompanyLanding/Project"
-          element={<ProjectPage />}
-        />
-        <Route path="/ConstructionCompanyLanding/Blog" element={<BlogPage />} />
-        <Route
-          path="/ConstructionCompanyLanding/Portfolio"
-          element={<PortfolioPage />}
-        />
-        <Route
-          path="/ConstructionCompanyLanding/Service"
-          element={<ServicePage />}
-        />
-        <Route
-          path="/ConstructionCompanyLanding/Services"
-          element={<ServicesPage />}
-        />
-        <Route
-          path="/ConstructionCompanyLanding/Contact"
-          element={<ContactPage />}
-        />
-        <Route
-          path="/ConstructionCompanyLanding/About"
-          element={<AboutPage />}
-        />
-        <Route path="/ConstructionCompanyLanding/Home" element={<HomePage />} />
+        <Route path="/" element={<MainPage />} />
+        <Route path="/Project" element={<ProjectPage />} />
+        <Route path="/Blog" element={<BlogPage />} />
+        <Route path="/Portfolio" element={<PortfolioPage />} />
+        <Route path="/Service" element={<ServicePage />} />
+        <Route path="/Services" element={<ServicesPage />} />
+        <Route path="/Contact" element={<ContactPage />} />
+        <Route path="/About" element={<AboutPage />} />
+        <Route path="/Home" element={<HomePage />} />
       </Routes>
 
       {shouldShowFooter && <Footer />}
